@@ -19,9 +19,12 @@ router.get("/header", (req,res) => {
 router.get("/login", (req,res) => {
   res.sendFile("login.html", {root: "./public/"})
 })
-router.get("/css", (req,res) => {
-  res.sendFile("style.css", {root: "./public/css"})
+router.get("/dbconfig", (req,res) => {
+  res.sendFile("db-config.js", {root: "./routes/"})
 })
+
+
+
 router.get("/logout",logout)
 
 module.exports = router;

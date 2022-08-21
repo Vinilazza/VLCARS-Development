@@ -11,18 +11,12 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous">
     </script>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
   <link rel="stylesheet" href="/css/index.css">
 
 </head>
-<script>
-  $(function () {
-    $("#header").load("/header");
-    $("#footer").load("footer.html");
-  });
-
- 
-</script>
 
 <body>
   <nav>
@@ -54,77 +48,108 @@
     </form>
     <%if (status=="loggedIn" ) {%>
       <div class="dropdowne">
-        <img  src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle dropbtn" onclick="dropdownFunc()" height="29px" alt=""
-          loading="lazy" />
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle dropbtn"
+          onclick="dropdownFunc()" height="29px" alt="" loading="lazy" />
         <div id="myDropdowne" class="dropdowne-content">
           <a href="/profile">Profile</a>
           <a href="/logout">Logout</a>
         </div>
       </div>
-
-
-
-
-
-
       <a href="" id="navbar">
-        
       </a>
       <%} else {%>
-      <a href="/register" id="navbar">
-        <span>Crie sua conta</span>
-      </a>
-      <%}%>
+        <a href="/register" id="navbar">
+          <span>Crie sua conta</span>
+        </a>
+        <%}%>
   </nav>
 
-  <div class="container my-5">
-    <div class="card" style="width: 100%;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <%if (status=="loggedIn" ){%>
-          <h5 class="card-title">Welcome <%= user.email %>
-          </h5>
-          <%}else{%>
-            <h5 class="card-title">Welcome to the site</h5>
-            <%}%>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-              <%if (status=="loggedIn" ){%>
-                <button class="btn btn-primary"><a href="/profile"
-                    style="color: white;text-decoration: none;">Profile</a></button>
-                <button class="btn btn-primary"><a href="/logout"
-                    style="color: white;text-decoration: none;">Logout</a></button>
-                <%}else{%>
-
-                  <button class="btn btn-primary"><a href="/login"
-                      style="color: white;text-decoration: none;">Login</a></button>
-                  <button class="btn btn-primary"><a href="/register"
-                      style="color: white;text-decoration: none;">Register</a></button>
-                  <%}%>
+  <main>
+    <div id="wrapper">
+      <div class="owl-carousel" id="slider-area">
+        <div style="background-image: url(img/2023-porsche-911-sport-classic-exterior-view-1_edited.jpg)"></div>
+        <div style="background-image: url(img/porsche-911-turbo-s.webp)"></div>
+        <div style="background-image: url(img/2022-porsche-macan-t.jpg)"></div>
+      </div>
+      <div class="slider-text">
+        <h2>VL<span>CARS</span></h2>
+        <p>Há 10 anos disponibilizando as melhores escolhas para voce!</p><a href="#">MODELOS</a> <a class="btn"
+          href="#">Contato</a>
       </div>
     </div>
-  </div>
-  <script>
-     /* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function dropdownFunc() {
-  document.getElementById("myDropdowne").classList.toggle("show");
-}
+    <div id="bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 ">
+            <h4>Veiculos disponiveis
+            </h4>
+          </div>
+          <div class="col-4 ">
+            <div class="container">
+              <span class="choose me-2">Modelo</span>
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdowne-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
+              <div class="dropdown">
+                <div class="select">
+                  <span>Escolha seu modelo</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input type="hidden" name="gender">
+                <ul class="dropdown-menu">
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 ">
+            <div class="container">
+              <span class="msg d-none">
+                O modelo escolhido foi <a class="text-decoration-none fw-bold " style="color:coral;"
+                  href="${input2}"></a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+      /* When the user clicks on the button,
+ toggle between hiding and showing the dropdown content */
+      function dropdownFunc() {
+        document.getElementById("myDropdowne").classList.toggle("show");
       }
-    }
-  }
-}
-  </script>
+
+      // Close the dropdown menu if the user clicks outside of it
+      window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdowne-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+
+      $('#slider-area').owlCarousel({
+        loop: true,
+        autoplay: true,
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 1
+          },
+          1000: {
+            items: 1
+          }
+        }
+      })        
+    </script>
+    <script src="/js/index.js"></script>
 </body>
 
 </html>
