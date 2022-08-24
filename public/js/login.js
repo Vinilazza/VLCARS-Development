@@ -15,10 +15,12 @@ form.addEventListener("submit", () => {
         success.style.display = "none"
         error.style.display = "block"
         error.innerText = data.error
+        
       } else {
         error.style.display = "none"
         success.style.display = "block"
         success.innerText = data.success
+        window.location.href = "/admin"
       }
     })
 })

@@ -22,6 +22,12 @@ router.get("/login", (req,res) => {
 router.get("/dbconfig", (req,res) => {
   res.sendFile("db-config.js", {root: "./routes/"})
 })
+router.get("/admin", (req,res) => {
+  res.sendFile("admin.html", {root: "./public/"})
+})
+router.get("/calendar", (req,res) => {
+  res.sendFile("calendar.html", {root: "./public/"})
+})
 
 
 
