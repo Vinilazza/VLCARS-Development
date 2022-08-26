@@ -11,7 +11,7 @@ const login = async (req,res) =>{
     db.query('SELECT * FROM users WHERE email = ?',[email], async(Err,results) => {
       const hashedPassword = results[0].password
       //get the hashedPassword from result
-            if (!results.length || !await bcrypt.compare(password, hashedPassword)) return res.json({status: "error", error: "Email ou senha incorreto"})
+            if (!results.email || !await bcrypt.compare(password, hashedPassword)) return res.json({status: "error", error: "Email ou senha incorreto"})
       else {
         const token = jwt.sign({id: results[0].id},process.env.JWT_SECRET,{
           expiresIn:process.env.JWT_EXPIRES
