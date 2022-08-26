@@ -9,9 +9,11 @@ const login = async (req,res) =>{
   if (!email || !password) return res.json({ status: "error", error: "Por favor coloque seu email e senha" })
   else {
     db.query('SELECT * FROM users WHERE email = ?',[email], async(Err,results) => {
+      if(results[0] == undefined) return res.json({status: "error", error: "Email ou senha incorreto"})
+      else {
       const hashedPassword = results[0].password
       //get the hashedPassword from result
-            if (!results.email || !await bcrypt.compare(password, hashedPassword)) return res.json({status: "error", error: "Email ou senha incorreto"})
+            if (!results.length || !await bcrypt.compare(password, hashedPassword)) return res.json({status: "error", error: "Email ou senha incorreto"})
       else {
         const token = jwt.sign({id: results[0].id},process.env.JWT_SECRET,{
           expiresIn:process.env.JWT_EXPIRES
@@ -23,7 +25,7 @@ const login = async (req,res) =>{
         res.cookie("userRegistered", token,cookieOptions)
         return res.json({status:"success",success: "User has ben logged in"})
         
-      }
+      }}
     })
   }
 }
