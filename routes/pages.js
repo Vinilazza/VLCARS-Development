@@ -28,6 +28,10 @@ router.get("/admin", (req,res) => {
 router.get("/calendar", (req,res) => {
   res.sendFile("calendar.html", {root: "./public/"})
 })
+router.get("/user", (req,res) => {
+  res.sendFile("user.html", {root: "./public/"})
+})
+
 
 
 
