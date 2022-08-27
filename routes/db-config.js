@@ -7,4 +7,5 @@ const db = sql.createConnection({
   database: process.env.DATABASE,
 });
 
+
 module.exports = db;

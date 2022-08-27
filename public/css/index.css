@@ -252,6 +252,14 @@ nav .logo.space{
 }
 
 /* */
+#video {
+  align-items: center;
+  justify-content: center;
+}
+.content2 {
+  position: absolute;
+  width: 100%;
+}
 
 body {
 	margin: 0;
@@ -421,7 +429,6 @@ span.choose {
 .dropdowne-content a:hover {
   background-color: rgba(141, 141, 141, 0.589)
 }
-
 
 .show {display: block;}
 

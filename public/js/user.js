@@ -1,6 +1,6 @@
 form.addEventListener("submit", () => {
   const manipulate = {
-    manipulate: vini.value
+    manipulate: document.getElementById("vini")
   }
   fetch("/api/user", {
     method: "POST",
@@ -14,8 +14,8 @@ form.addEventListener("submit", () => {
         console.log("ERROR")
         
       } else {
-        console.log("SUcess")
-        manipulate.innerHTML = "Sucesso"
+        console.log(v)
+        console.log("sucesso!")
       }
     })
 })
