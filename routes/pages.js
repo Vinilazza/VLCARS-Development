@@ -31,8 +31,9 @@ router.get("/calendar", (req,res) => {
 router.get("/user", (req,res) => {
   res.sendFile("user.html", {root: "./public/"})
 })
-
-
+router.get("/get-user", (req,res) => {
+  res.sendFile("user.js", {root: "./controllers/"})
+})
 
 
 router.get("/logout",logout)
