@@ -75,6 +75,31 @@ nav form .search-data{
   font-weight: 500;
   background: none;
 }
+tbody, td, tfoot, th, thead, tr {
+  color: #fff;
+  width: 65%;
+}
+tr {
+padding-right: 200px;
+}
+tr:hover {
+  opacity: 0.8;
+}
+td,th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+table {
+  display: flex;
+  justify-content: center;
+}
 nav .logo{
   color: #fff;
   font-size: 30px;

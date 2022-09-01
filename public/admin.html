@@ -104,7 +104,7 @@
 						</a>
 						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
 							<li><a class="dropdown-item" href="/profile">Meu perfil</a></li>
-							<li><a class="dropdown-item" href="#">Configurações</a></li>
+							<li><a class="dropdown-item" href="/admin">Configurações</a></li>
 							<li><a class="dropdown-item" href="/logout">Sair</a></li>
 						</ul>
 					</li>
@@ -114,99 +114,101 @@
 	</header>
 
 	<!--Main layout-->
-	<main style="margin-top: 58px;  ">
+	<main style="margin-top: 58px;  " class="fade-in-text">
 		<div class="container pt-4">
 			<div class="row">
-<div class="logo text-center fs-1 mt-1 mb-3 ">
+				<div class="logo text-center fs-1 mt-1 mb-3 ">
 					<span style="color: white;">VL</span><span style="color: coral;">CARS</span>
 					<hr class="mt-0 hrstyle " style="margin: auto ; width: 25%;">
 				</div>
-				
-			<div class="col-xl-3 col-md-6 mb-4">
-				<div class="card border-left-primary shadow h-100 py-2">
-					<div class="card-body">
-						<div class="row no-gutters align-items-center">
-							<div class="col mr-2">
-								<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-									Ganhos (Mensais)</div>
-								<div class="h5 mb-0 font-weight-bold text-gray-800">R$ 60.000,00</div>
-							</div>
-							<div class="col-auto">
-								<i class="fas fa-calendar fa-2x text-gray-300"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xl-3 col-md-6 mb-4">
-				<div class="card border-left-success shadow h-100 py-2">
-					<div class="card-body">
-						<div class="row no-gutters align-items-center">
-							<div class="col mr-2">
-								<div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-									Ganhos (Anual)</div>
-								<div class="h5 mb-0 font-weight-bold text-gray-800">R$ 720.000,00</div>
-							</div>
-							<div class="col-auto">
-								<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xl-3 col-md-6 mb-4">
-				<div class="card border-left-info shadow h-100 py-2">
-					<div class="card-body">
-						<div class="row no-gutters align-items-center">
-							<div class="col mr-2">
-								<div class="text-xs font-weight-bold text-info text-uppercase mb-1">Vendas
+
+				<div class="col-xl-3 col-md-6 mb-4">
+					<div class="card border-left-primary shadow h-100 py-2">
+						<div class="card-body">
+							<div class="row no-gutters align-items-center">
+								<div class="col mr-2">
+									<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+										Ganhos (Mensais)</div>
+									<div class="h5 mb-0 font-weight-bold text-gray-800">R$ 60.000,00</div>
 								</div>
-								<div class="row no-gutters align-items-center">
-									<div class="col-auto">
-										<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+								<div class="col-auto">
+									<i class="fas fa-calendar fa-2x text-gray-300"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 col-md-6 mb-4">
+					<div class="card border-left-success shadow h-100 py-2">
+						<div class="card-body">
+							<div class="row no-gutters align-items-center">
+								<div class="col mr-2">
+									<div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+										Ganhos (Anual)</div>
+									<div class="h5 mb-0 font-weight-bold text-gray-800">R$ 720.000,00</div>
+								</div>
+								<div class="col-auto">
+									<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 col-md-6 mb-4">
+					<div class="card border-left-info shadow h-100 py-2">
+						<div class="card-body">
+							<div class="row no-gutters align-items-center">
+								<div class="col mr-2">
+									<div class="text-xs font-weight-bold text-info text-uppercase mb-1">Vendas
 									</div>
-									<div class="col">
-										<div class="progress progress-sm mr-2">
-											<div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50"
-												aria-valuemin="0" aria-valuemax="100"></div>
+									<div class="row no-gutters align-items-center">
+										<div class="col-auto">
+											<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+										</div>
+										<div class="col">
+											<div class="progress progress-sm mr-2">
+												<div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50"
+													aria-valuemin="0" aria-valuemax="100"></div>
+											</div>
 										</div>
 									</div>
 								</div>
+								<div class="col-auto">
+									<i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+								</div>
 							</div>
-							<div class="col-auto">
-								<i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 col-md-6 mb-4">
+					<div class="card border-left-warning shadow h-100 py-2">
+						<div class="card-body">
+							<div class="row no-gutters align-items-center">
+								<div class="col mr-2">
+									<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+										Vendas pendentes</div>
+									<div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+								</div>
+								<div class="col-auto">
+									<i class="fas fa-comments fa-2x text-gray-300"></i>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-xl-3 col-md-6 mb-4">
-				<div class="card border-left-warning shadow h-100 py-2">
-					<div class="card-body">
-						<div class="row no-gutters align-items-center">
-							<div class="col mr-2">
-								<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-									Vendas pendentes</div>
-								<div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-							</div>
-							<div class="col-auto">
-								<i class="fas fa-comments fa-2x text-gray-300"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 
 
 			<div class=" fade-in-text" style="height: 100%;	">
-				
+
 				<h4 class="font text-center mt-2 text-white fs-3 mt-3 ">Area administrativa</h4>
 				<p class="font text-white text-center ">Onde você deseja fazer alterações?</p>
 
 				<div class="d-flex justify-content-center">
-					<button class="button" style="vertical-align:middle"><i class="fa-solid fa-car me-2"></i><span>CARROS </span></button>
-					<button class="button" style="vertical-align:middle"><i class="fa fa-user me-2"></i><span>USUARIO </span></button>
+					<button class="button" style="vertical-align:middle"><i class="fa-solid fa-car me-2"><a href="#"
+								class="text-decoration-none text-white"></i><span>CARROS </span></a></button>
+					<button class="button" style="vertical-align:middle"><i class="fa fa-user me-2"></i><a href="/user"
+							class="text-decoration-none text-white"><span>USUARIO </span></a></button>
 				</div>
 
 			</div>
