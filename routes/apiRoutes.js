@@ -8,6 +8,9 @@ routes.post('/register', register.register);
 routes.post('/login', login);
 routes.post('/user', user);
 routes.get('/get-user', register.getUsers);
+routes.post('/insert-model', register.insertModel);
+routes.post('/insert-categoria', register.insertCategoria);
+routes.get('/getCategoria', register.getCategoria);
 
 // routes.post('/users', UsersController.testeCreate);
 

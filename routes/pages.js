@@ -34,6 +34,12 @@ router.get("/user", (req,res) => {
 router.get("/get-user", (req,res) => {
   res.sendFile("user.js", {root: "./controllers/"})
 })
+router.get("/car", (req,res) => {
+  res.sendFile("registerModel.html", {root: "./public/"})
+})
+router.get("/categoria", (req,res) => {
+  res.sendFile("categoria.html", {root: "./public/"})
+})
 
 
 router.get("/logout",logout)
