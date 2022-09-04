@@ -3,7 +3,8 @@ form.addEventListener("submit", () => {
     nome: document.getElementById('nomeCarro').value,
     modelo: document.getElementById('modeloCarro').value,
     cor: document.getElementById('corCarro').value,
-    ano: document.getElementById('anoCarro').value
+    ano: document.getElementById('anoCarro').value,
+    categoria: document.getElementById('mySelect').value,
   }
   fetch("/api/insert-model", {
     method: "POST",

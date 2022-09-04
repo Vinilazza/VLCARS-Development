@@ -30,8 +30,8 @@
       </div>
     </a>
     <div class="nav-items">
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/sobre">Sobre</a></li>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Sobre</a></li>
       <li><a href="#">Carros</a></li>
       <li><a href="#">Contato</a></li>W
     </div>
@@ -45,22 +45,6 @@
       <input type="search" class="search-data" placeholder="Search" required>
       <button type="submit" class="fas fa-search"></button>
     </form>
-    <%if (status=="loggedIn" ) {%>
-      <div class="dropdowne">
-        <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle dropbtn"
-          onclick="dropdownFunc()" height="29px" alt="" loading="lazy" />
-        <div id="myDropdowne" class="dropdowne-content">
-          <a href="/admin">Profile</a>
-          <a href="/logout">Logout</a>
-        </div>
-      </div>
-      <a href="" id="navbar">
-      </a>
-      <%} else {%>
-        <a href="/register" id="navbar">
-          <span>Crie sua conta</span>
-        </a>
-        <%}%>
   </nav>
 
   <main>

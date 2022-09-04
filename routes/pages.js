@@ -40,6 +40,9 @@ router.get("/car", (req,res) => {
 router.get("/categoria", (req,res) => {
   res.sendFile("categoria.html", {root: "./public/"})
 })
+router.get("/sobre", (req,res) => {
+  res.sendFile("sobre.html", {root: "./public/"})
+})
 
 
 router.get("/logout",logout)

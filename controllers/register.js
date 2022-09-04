@@ -30,8 +30,8 @@ module.exports = {
   },
 
   async insertModel(req, res) {
-    const { nome, modelo, cor, ano } = req.body;
-    db.query('INSERT INTO carros SET ?', { nome, modelo, cor, ano }, async (err, result) => {
+    const { nome, modelo, cor, ano, categoria } = req.body;
+    db.query('INSERT INTO carros SET ?', { nome, modelo, cor, ano, categoria }, async (err, result) => {
       if (err) throw err;
       if (result[0]) return res.json({ status: "error", error: "Ocorreu um erro no cadastro do modelo!" })
     })
