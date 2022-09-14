@@ -23,7 +23,6 @@ app.get("/image/:id", (req, res) => {
     res.render("imageView", { name: result[0].file_data });
   })
 });
-
 app.post("/store", (req, res) => {
   const { image, fileName } = req.body;
   const query = "Insert Into file(file_name, file_data, created_by, created_on) Values(?,?,?,CURRENT_TIMESTAMP)";
@@ -35,7 +34,6 @@ app.post("/store", (req, res) => {
     res.status(200).send({ id:result.insertId });
   })
 });
-
 app.use(cookie());
 app.use(express.json());
 db.connect((err) => {

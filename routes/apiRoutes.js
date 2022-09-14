@@ -14,6 +14,7 @@ routes.post('/insert-model', register.insertModel);
 routes.post('/insert-categoria', register.insertCategoria);
 routes.get('/getCategoria', register.getCategoria);
 routes.get('/getCar', register.getCar);
+routes.post('/remove', register.remove);
 
 
 // routes.post('/users', UsersController.testeCreate);

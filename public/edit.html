@@ -20,17 +20,17 @@
         <a href="/admin" class="list-group-item list-group-item-action py-2 ripple " aria-current="true">
           <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Inicio</span>
         </a>
-        <a href="/car" class="list-group-item list-group-item-action py-2 ripple ">
+        <a href="/car" class="list-group-item list-group-item-action py-2 ripple">
           <i class="fas fa-chart-area fa-fw me-3"></i><span>Carros</span>
         </a>
         <a href="/categoria" class="list-group-item list-group-item-action py-2 ripple ">
           <i class="fa-solid fa-pencil fa-fw me-3"></i><span>Categorias</span>
         </a>
-        <a href="/user" class="list-group-item list-group-item-action py-2 ripple active"><i
+        <a href="/user" class="list-group-item list-group-item-action py-2 ripple "><i
             class="fas fa-lock fa-fw me-3"></i><span>Usuarios</span></a>
-            <a href="/edit" class="list-group-item list-group-item-action py-2 ripple ">
-              <i class="fas fa-chart-area fa-fw me-3"></i><span>Edições</span>
-            </a>
+        <a href="/edit" class="list-group-item list-group-item-action py-2 ripple active">
+          <i class="fa-solid fa-user-pen me-3"></i><span>Edições</span>
+        </a>
         <a href="/calendar" class="list-group-item list-group-item-action py-2 ripple"><i
             class="fas fa-calendar fa-fw me-3"></i><span>Calendar</span></a>
       </div>
@@ -106,7 +106,7 @@
             <img src="img/prof.jpeg" class="rounded-circle" height="22" alt="" loading="lazy" />
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Meu perfil</a></li>
+            <li><a class="dropdown-item" href="/admin">Meu perfil</a></li>
             <li><a class="dropdown-item" href="#">Configurações</a></li>
             <li><a class="dropdown-item" href="/logout">Sair</a></li>
           </ul>
@@ -115,21 +115,82 @@
     </div>
   </nav>
   <main style="margin-top: 68px;">
+
     <div class="container pt-4 d-flex flex-column mb-3">
       <div class="logo text-center fs-1 mt-1 mb-3 ">
         <span style="color: white;">VL</span><span style="color: coral;">CARS</span>
         <hr class="mt-0 hrstyle " style="margin: auto ; width: 25%;">
       </div>
-      <form onsubmit="return false" id="form">
-        <div class="d-flex justify-content-center">
-        <button type="submit" class="btn text-white rounded-3 bg-success hrv mb-5">USUARIOS CADASTRADOS</button></div>
-        <div id="vini" class="text-white" style="color: #fff;"></div>
-      </form>
+      <div class="d-flex justify-content-center">
+        <button onclick="cadastrar()" class="button" style="vertical-align:middle"><i
+            class="fa-solid fa-car me-2"></i><span>REMOVER </span></button>
+        <button onclick="listar()" class="button" id="2" style="vertical-align:middle"><i
+            class="fa-sharp fa-solid fa-minimize me-2"></i><span id="h3a">VER LISTA </span></button>
+      </div>
+
+
+      <div id="testvini" class="container w-50 text-white mt-5 p-5 rounded-3 shadow" style="display:none;">
+        <form onsubmit=" return false" id="form" class="row g-3 ">
+
+
+
+          <div class="row mb-3">
+            <label for="inputState" class="col-sm-3 col-form-label font text-center "
+              style="font-size: 18px;">ID: <span style="color:red; text-align: center;">*</span></label>
+            <div class="col-sm-9 ">
+              <select id="mySelect" class="w-100 text-center rounded-0 form-control"></select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputState" class="col-sm-3 col-form-label font text-center "
+              style="font-size: 18px;">ID|NOME: <span style="color:red; text-align: center;">*</span></label>
+            <div class="col-sm-9 ">
+              <select id="mySelect2" class="w-100 text-center rounded-0 form-control noedit" style="user-select: none; display: block;"></select>
+            </div>
+          </div>
+         
+
+
+          <div class="alert alert-danger rounded-5" role="alert" id="error" style="display: none"></div>
+          <div class="alert alert-success rounded-5" role="alert" id="success" style="display: none"></div>
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn text-white rounded-3 bg-danger w-50  mt-3 hrv mb-1">REMOVER</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    </div>
+
+
+    <div class="container">
+      <div id="vini" class="text-white" style="color: #fff; display: none;"></div>
     </div>
   </main>
 
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
-  <script src="js/user.js"></script>
+  <script src="js/remove.js"></script>
 </body>
+<script>
+
+  const c = document.querySelector("#testvini");
+  const v = document.querySelector("#vini")
+  
+  function cadastrar() {
+    c.style.display = ""
+    v.style.display = "none"
+  }
+  var isExpanded = false;
+  function listar() {
+    v.style.display = isExpanded ? "none" : ""
+    document.getElementById("h3a").innerHTML = isExpanded ? '<span>VER LISTA</span>' : '<span>VOLTAR</span>'
+    isExpanded = !isExpanded
+  }
+
+
+
+
+
+</script>
 
 </html>

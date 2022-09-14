@@ -130,7 +130,6 @@ tr {
 tr:hover {
   opacity: 0.8;
 }
-
 td,
 th {
   border: 1px solid #ddd;
@@ -147,7 +146,7 @@ th {
 
 table {
   display: flex;
- 
+  table-layout: auto;
   justify-content: center;
   width: 100%;
   align-self: center;

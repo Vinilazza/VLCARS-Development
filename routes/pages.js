@@ -43,7 +43,9 @@ router.get("/categoria", (req,res) => {
 router.get("/sobre", (req,res) => {
   res.sendFile("sobre.html", {root: "./public/"})
 })
-
+router.get("/edit", (req,res) => {
+  res.sendFile("edit.html", {root: "./public/"})
+})
 
 router.get("/logout",logout)
 
