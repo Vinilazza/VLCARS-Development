@@ -13,9 +13,6 @@ router.get("/",loggedIn, (req,res) => {
 router.get("/register", (req,res) => {
   res.sendFile("register.html", {root: "./public"})
 })
-router.get("/header", (req,res) => {
-  res.sendFile("header.html", {root: "./global"})
-})
 router.get("/login", (req,res) => {
   res.sendFile("login.html", {root: "./public/"})
 })
@@ -30,9 +27,6 @@ router.get("/calendar", (req,res) => {
 })
 router.get("/user", (req,res) => {
   res.sendFile("user.html", {root: "./public/"})
-})
-router.get("/get-user", (req,res) => {
-  res.sendFile("user.js", {root: "./controllers/"})
 })
 router.get("/car", (req,res) => {
   res.sendFile("registerModel.html", {root: "./public/"})
