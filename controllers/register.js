@@ -79,6 +79,18 @@ module.exports = {
       return res.json({ status: "success", success: "A remoção de cadastro foi um sucesso!" })
     })
   },
+  async edit(req, res) {
+    const { id,nome, modelo, cor, ano, categoria } = req.body;
+    db.query(`update carros set nome = ?,modelo = ?,cor = ?,ano = ?,categoria = ? where idcarros = ?`, [ nome, modelo, cor, ano,categoria,id ],async (err, result) => {
+      if (err) throw err;
+      if (result[0]) return res.json({ status: "error", error: "Ocorreu um erro no cadastro do modelo!" })
+    })
+    await db.query('SELECT * FROM carros', async (err, result) => {
+      if (err) throw err;
+      return res.json({ status: "success", success: "A alteração do cadastro foi um sucesso!" })
+    })
+  },
+
 
 }
 

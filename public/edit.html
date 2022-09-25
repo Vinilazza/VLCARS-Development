@@ -124,8 +124,8 @@
       <div class="d-flex justify-content-center">
         <button onclick="cadastrar()" class="button" style="vertical-align:middle"><i
             class="fa-solid fa-car me-2"></i><span>REMOVER </span></button>
-        <button onclick="listar()" class="button" id="2" style="vertical-align:middle"><i
-            class="fa-sharp fa-solid fa-minimize me-2"></i><span id="h3a">VER LISTA </span></button>
+        <button onclick="editar()" class="button" id="2" style="vertical-align:middle"><i
+            class="fa-solid fa-user-pen me-2"></i><span id="h3a">EDITAR </span></button>
       </div>
 
 
@@ -162,9 +162,76 @@
     </div>
 
 
-    <div class="container">
-      <div id="vini" class="text-white" style="color: #fff; display: none;"></div>
+    <div id="vini" class="container w-50 text-white mt-5 p-5 rounded-3 shadow" style="display:none;">
+      <form onsubmit=" return false" id="form" class="row g-3 ">
+        <div class="row mb-3">
+          <label for="inputState" class="col-sm-3 col-form-label font text-center "
+            style="font-size: 18px;">ID: <span style="color:red; text-align: center;">*</span></label>
+          <div class="col-sm-9 ">
+            <select id="mySelect3" class="w-100 text-center rounded-0 form-control"></select>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputState" class="col-sm-3 col-form-label font text-center "
+            style="font-size: 18px;">ID|NOME: <span style="color:red; text-align: center;">*</span></label>
+          <div class="col-sm-9 ">
+            <select id="mySelect4" class="w-100 text-center rounded-0 form-control noedit" style="user-select: none; display: block;"></select>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="nomeCarro" class="col-sm-3 col-form-label font text-center " style="font-size: 18px;">Nome:
+            <span style="color:red; text-align: center;">*</span></label>
+          <div class="col-sm-9 ">
+            <input type="nomeCarro" class="form-control rounded-0" id="nomeCarro" required>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="modeloCarro" class="col-sm-3 col-form-label font text-center " style="font-size: 18px;">Modelo:
+            <span style="color:red; text-align: center;">*</span></label>
+          <div class="col-sm-9 ">
+            <input type="modeloCarro" class="form-control rounded-0" required id="modeloCarro">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="corCarro" class="col-sm-3 col-form-label font text-center " style="font-size: 18px;">Cor: <span
+              style="color:red; text-align: center;">*</span></label>
+          <div class="col-sm-9 ">
+            <input type="corCarro" class="form-control rounded-0" required id="corCarro">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="anoCarro" class="col-sm-3 col-form-label font text-center " style="font-size: 18px;">Ano: <span
+              style="color:red; text-align: center;">*</span></label>
+          <div class="col-sm-9 ">
+            <input type="anoCarro" class="form-control rounded-0" required id="anoCarro">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="inputState" class="col-sm-3 col-form-label font text-center "
+            style="font-size: 18px;">Categoria: <span style="color:red; text-align: center;">*</span></label>
+          <div class="col-sm-9 ">
+            <select id="cat" class="w-100 text-center rounded-0 form-control"></select>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputState" class="col-sm-3 col-form-label font text-center " style="font-size: 18px;">Imagem:
+            <span style="color:red; text-align: center;">*</span></label>
+          <div class="col-sm-9 ">
+            <input type="file" class="form-control" id="file">
+          </div>
+        </div>
+
+
+        <div class="alert alert-danger rounded-5" role="alert" id="error2" style="display: none"></div>
+        <div class="alert alert-success rounded-5" role="alert" id="success2" style="display: none"></div>
+        <div class="d-flex justify-content-center">
+          <button type="submit"  class="btn text-white rounded-3 bg-success w-50  mt-3 hrv mb-1">CADASTRAR</button>
+        </div>
+      </form>
     </div>
+  </div>
+  </div>
   </main>
 
 
@@ -177,14 +244,15 @@
   const v = document.querySelector("#vini")
   
   function cadastrar() {
-    c.style.display = ""
+    c.style.display = isExpanded ? "none" : ""
+    isExpanded = !isExpanded
     v.style.display = "none"
   }
   var isExpanded = false;
-  function listar() {
+  function editar() {
     v.style.display = isExpanded ? "none" : ""
-    document.getElementById("h3a").innerHTML = isExpanded ? '<span>VER LISTA</span>' : '<span>VOLTAR</span>'
     isExpanded = !isExpanded
+    c.style.display = "none"
   }
 
 
