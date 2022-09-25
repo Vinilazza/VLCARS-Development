@@ -1,0 +1,4 @@
+Primeiro uso: 
+Necessario importar o banco de dados(Mysql) para o seu computador. Pasta SQL
+Para executar o projeto precisa abrir o terminal, depois executar o node: node index.js
+Abrir o google em: localhost:5000
