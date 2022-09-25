@@ -1,8 +1,7 @@
 const express = require("express");
 const db = require("./routes/db-config");
-const bodyParser = require('body-parser');
 const app = express();
-const multer = require('multer');
+const ejs = require('ejs');
 const cookie = require("cookie-parser");
 const PORT = process.env.PORT || 5000;
 app.use("/js",express.static(__dirname + "/public/js"));
