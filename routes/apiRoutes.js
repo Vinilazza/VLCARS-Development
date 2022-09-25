@@ -17,7 +17,6 @@ routes.get('/getCar', register.getCar);
 routes.post('/remove', register.remove);
 routes.post('/edit', register.edit);
 
-
 // routes.post('/users', UsersController.testeCreate);
 
 module.exports = routes;
