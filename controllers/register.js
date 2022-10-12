@@ -101,6 +101,12 @@ module.exports = {
       return res.json({ status: "success", success: "O cadastro do modelo de veiculo foi um sucesso!" })
     })
   },
-
+  async search(req, res) {
+    const { valor } = req.body;
+    db.query('SELECT * FROM carros where nome = ?', [valor], async (err, result) => {
+      if (err) throw err;
+      return res.json({ status: "success", success: result})
+    })
+  },
 }
 
