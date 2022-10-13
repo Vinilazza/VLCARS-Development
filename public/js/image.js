@@ -145,7 +145,7 @@ fetch("/api/getCar", {
       }
 
       // Now, add the newly created table with json data, to a container.
-      const divShowData = document.getElementById('vini');
+      const divShowData = document.getElementById('div2');
       divShowData.innerHTML = "";
       divShowData.appendChild(table);
     }

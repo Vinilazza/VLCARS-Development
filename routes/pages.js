@@ -40,7 +40,9 @@ router.get("/sobre", (req,res) => {
 router.get("/edit", (req,res) => {
   res.sendFile("edit.html", {root: "./public/"})
 })
-
+router.get("/vendas", (req,res) => {
+  res.sendFile("venda.html", {root: "./public/"})
+})
 router.get("/logout",logout)
 
 module.exports = router;

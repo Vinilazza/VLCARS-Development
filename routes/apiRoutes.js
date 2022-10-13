@@ -16,6 +16,8 @@ routes.get('/getCategoria', register.getCategoria);
 routes.get('/getCar', register.getCar);
 routes.post('/remove', register.remove);
 routes.post('/edit', register.edit);
+routes.post('/vendas', register.vendas);
+routes.post('/search', register.search);
 
 // routes.post('/users', UsersController.testeCreate);
 
