@@ -41,9 +41,9 @@
         </div>
       </a>
 
-      <form action="#" class="search-nav">
+      <form class="search-nav">
         <input type="search"  class="search-data"id="search"  placeholder="Search" required>
-        <button type="submit" onclick="busca()" class="fas fa-search"></button>
+        <button type="submit" class="fas fa-search" id="btn-submit"></button>
         
       </form>
 
@@ -110,6 +110,7 @@
 
     <div id="div3"></div>
     <button onclick="close()" class="button" style="vertical-align:middle;display: none;"  id="btn3"><i class="fa-regular fa-xmark-large"></i><span>Concluir </span></button>
+    <div class="alert alert-danger rounded-5" role="alert" id="error2" style="display: none"></div>
     <div class="container pt-4 d-flex flex-column mb-3">
       <div class="logo text-center fs-1 mt-1 mb-3 ">
         <span style="color: white;">VL</span><span style="color: coral;">CARS</span>
