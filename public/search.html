@@ -11,53 +11,86 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous">
     </script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:300,400,500,600" rel="stylesheet">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" rel="stylesheet">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
   <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/search.css">
 
 </head>
 
 <body>
-  <nav>
+  <nav class="d-flex justify-content-center">
     <div class="menu-icon">
       <span class="fas fa-bars"></span>
     </div>
-
-    <a href="/" class="a-nav">
-      <div class="logo" class="me-4">
+    <a href="/" class="a-nav justify-content-center">
+      <div class="logo justify-content-center " class="me-4">
         VL<span style="color: coral;">CARS</span>
       </div>
     </a>
-    <div class="nav-items">
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/">Sobre</a></li>
-      <li><a href="#">Carros</a></li>
-      <li><a href="#">Contato</a></li>W
-    </div>
-    <div class="search-icon">
-      <span class="fas fa-search"></span>
-    </div>
-    <div class="cancel-icon">
-      <span class="fas fa-times"></span>
-    </div>
-    <form action="#" class="me-3">
-        <input type="search"  class="search-data"id="search"  placeholder="Search" required>
-        <button type="submit" onclick="busca()" class="fas fa-search"></button>
-    </form>
-      <div class="dropdowne">
-        <img src="/img/prof.jpeg" class="rounded-circle dropbtn w-100"
-          onclick="dropdownFunc()" height="29px" alt="" loading="lazy" />
-        <div id="myDropdowne" class="dropdowne-content">
-          <a href="/admin">Profile</a>
-          <a href="/logout">Logout</a>
-        </div>
-      </div>
-      <a href="" id="navbar">
-      </a>
+   
+ 
+     
   </nav>
 
-  <main>
+  <main> 
+      <!DOCTYPE html>
+      <!-- Created By CodingNepal -->
+      <html lang="en" dir="ltr">
+        <head>
+          <meta charset="utf-8">
+          <title>Animated Search Box | CodingNepal</title>
+          <link rel="stylesheet" href="style.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        </head>
+        <body>
+          <div class="search-box">
+            <input type="text" placeholder="Type to search..">
+            <div class="search-icon">
+              <i class="fas fa-search"></i>
+            </div>
+      <div class="cancel-icon">
+              <i class="fas fa-times"></i>
+            </div>
+      <div class="search-data">
+      </div>
+      </div>
+      <script>
+            const searchBox = document.querySelector(".search-box");
+            const searchBtn = document.querySelector(".search-icon");
+            const cancelBtn = document.querySelector(".cancel-icon");
+            const searchInput = document.querySelector("input");
+            const searchData = document.querySelector(".search-data");
+            searchBtn.onclick =()=>{
+              searchBox.classList.add("active");
+              searchBtn.classList.add("active");
+              searchInput.classList.add("active");
+              cancelBtn.classList.add("active");
+              searchInput.focus();
+              if(searchInput.value != ""){
+                var values = searchInput.value;
+                searchData.classList.remove("active");
+                searchData.innerHTML = "You just typed " + "<span style='font-weight: 500;'>" + values + "</span>";
+              }else{
+                searchData.textContent = "";
+              }
+            }
+            cancelBtn.onclick =()=>{
+              searchBox.classList.remove("active");
+              searchBtn.classList.remove("active");
+              searchInput.classList.remove("active");
+              cancelBtn.classList.remove("active");
+              searchData.classList.toggle("active");
+              searchInput.value = "";
+            }
+          </script>
+      
+        </body>
+      </html>
+
     <div class="wrapper">
         <div class="d-flex">
             <div class="justify-content-center">
@@ -107,6 +140,7 @@
           }
         })        
       </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
       <script src="js/all.js"></script>
 </body>
 

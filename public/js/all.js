@@ -21,6 +21,7 @@ function close() {
 
 function redc(e) {
   window.location= "/search";
+  busca()
 }
 
 document.getElementById("btn-submit").addEventListener("click" , (ev) => {
@@ -30,6 +31,7 @@ document.getElementById("btn-submit").addEventListener("click" , (ev) => {
   }
   else {
     redc(event)
+    busca()
   }
 })
 
@@ -117,3 +119,7 @@ function busca() {
     )
 
 }
+  
+document.querySelector('.stick').addEventListener('click',()=>{
+  document.querySelector('.four').value = '';
+});
