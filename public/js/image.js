@@ -26,6 +26,22 @@ form.addEventListener("submit", () => {
     })
 })
 
+function redc(e) {
+  window.location= "/search";
+  busca()
+}
+document.getElementById("btn-submit").addEventListener("click" , (ev) => {
+  ev.preventDefault();
+  if (filename == "/search") {
+    busca();
+  }
+  else {
+    redc(event)
+    busca()
+  }
+})
+
+
 fetch("/api/getCategoria", {
   method: "GET",
   headers: {

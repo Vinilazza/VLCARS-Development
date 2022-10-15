@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
   <link rel="stylesheet" href="/css/index.css">
   <link rel="stylesheet" href="/css/search.css">
+  <link rel="stylesheet" href="style.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
 </head>
 
@@ -37,20 +39,10 @@
   </nav>
 
   <main> 
-      <!DOCTYPE html>
-      <!-- Created By CodingNepal -->
-      <html lang="en" dir="ltr">
-        <head>
-          <meta charset="utf-8">
-          <title>Animated Search Box | CodingNepal</title>
-          <link rel="stylesheet" href="style.css">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-        </head>
-        <body>
           <div class="search-box">
-            <input type="text" placeholder="Type to search..">
+            <input type="text" id="search" placeholder="Type to search.." required>
             <div class="search-icon">
-              <i class="fas fa-search"></i>
+              <i class="fas fa-search"onclick="busca()" ></i>
             </div>
       <div class="cancel-icon">
               <i class="fas fa-times"></i>
@@ -73,7 +65,7 @@
               if(searchInput.value != ""){
                 var values = searchInput.value;
                 searchData.classList.remove("active");
-                searchData.innerHTML = "You just typed " + "<span style='font-weight: 500;'>" + values + "</span>";
+                searchData.innerHTML = "Voce digitou " + "<span style='font-weight: 500;'>" + values + "</span>";
               }else{
                 searchData.textContent = "";
               }
@@ -88,10 +80,8 @@
             }
           </script>
       
-        </body>
-      </html>
 
-    <div class="wrapper">
+    <div class="wrapper mt-5 ">
         <div class="d-flex">
             <div class="justify-content-center">
                 <div id="div3"></div>
@@ -102,44 +92,6 @@
     </div>
   </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/index.js"></script>
-    <script>
-        /* When the user clicks on the button,
-   toggle between hiding and showing the dropdown content */
-        function dropdownFunc() {
-          document.getElementById("myDropdowne").classList.toggle("show");
-        }
-  
-        // Close the dropdown menu if the user clicks outside of it
-        window.onclick = function (event) {
-          if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdowne-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-              if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-              }
-            }
-          }
-        }
-  
-        $('#slider-area').owlCarousel({
-          loop: true,
-          autoplay: true,
-          responsive: {
-            0: {
-              items: 1
-            },
-            600: {
-              items: 1
-            },
-            1000: {
-              items: 1
-            }
-          }
-        })        
-      </script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
       <script src="js/all.js"></script>
 </body>

@@ -19,21 +19,6 @@ function close() {
   console.log("a")
 }
 
-function redc(e) {
-  window.location= "/search";
-  busca()
-}
-
-document.getElementById("btn-submit").addEventListener("click" , (ev) => {
-  ev.preventDefault();
-  if (filename == "/search") {
-    busca();
-  }
-  else {
-    redc(event)
-    busca()
-  }
-})
 
 function busca() {
   const dados = {
@@ -56,9 +41,13 @@ function busca() {
             const error = document.getElementById("error2")
             error.style.display = "";
             error.textContent = "Não foi encontrado resultados"
-
+            const divShowData = document.getElementById('div3');
+            divShowData.innerHTML = "";
+            document.getElementById("btn3").style.display = "none"
           }
           else {
+            const error = document.getElementById("error2")
+            error.style.display = "none"
             const interator = data.success;
             // Extract value from table header. 
             // ('Book ID', 'Book Name', 'Category' and 'Price')
@@ -102,8 +91,7 @@ function busca() {
             // Now, add the newly created table with json data, to a container.
             const divShowData = document.getElementById('div3');
             divShowData.innerHTML = "";
-            divShowData.appendChild(table);
-            document.getElementById("btn3").style.display = ""
+            divShowData.appendChild(table)
           }
 
         }
@@ -120,6 +108,4 @@ function busca() {
 
 }
   
-document.querySelector('.stick').addEventListener('click',()=>{
-  document.querySelector('.four').value = '';
-});
+
