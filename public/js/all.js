@@ -19,6 +19,18 @@ function close() {
   console.log("a")
 }
 
+function redc(e) {
+  window.location= "/search";
+  busca()
+}
+document.getElementById("btn-submit").addEventListener("click" , (ev) => {
+  ev.preventDefault();
+  if (filename == "/search") {
+  }
+  else {
+    redc(event)
+  }
+})
 
 function busca() {
   const dados = {
