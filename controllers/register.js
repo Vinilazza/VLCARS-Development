@@ -108,5 +108,11 @@ module.exports = {
       return res.json({ status: "success", success: result})
     })
   },
+  async getData(req, res) {
+    db.query('SELECT * FROM carros,file',  async (err, result) => {
+      if (err) throw err;
+      return res.json({ status: "success", success: result})
+    })
+  },
 }
 

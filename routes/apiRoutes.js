@@ -18,6 +18,7 @@ routes.post('/remove', register.remove);
 routes.post('/edit', register.edit);
 routes.post('/vendas', register.vendas);
 routes.post('/search', register.search);
+routes.get('/getAllData', register.getData);
 
 // routes.post('/users', UsersController.testeCreate);
 
