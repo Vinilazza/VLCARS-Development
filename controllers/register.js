@@ -109,9 +109,9 @@ module.exports = {
     })
   },
   async getData(req, res) {
-    db.query('SELECT * FROM carros,file',  async (err, result) => {
+    db.query('Select file_data From file where id = 1',  async (err, result) => {
       if (err) throw err;
-      return res.json({ status: "success", success: result})
+      return res.json({ status: "success", success: result[0]})
     })
   },
 }

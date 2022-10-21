@@ -11,17 +11,8 @@ app.set("view engine", "ejs");
 app.set("views", "./views");
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true }));
-app.get("/image/:id", (req, res) => {
-  const { id }=req.params;
-  const query = "Select file_data From file Where id = ?";
-  db.query(query, [id], (err, result) => {
-    if (err) {
-      console.log(err);
-    }
-    // console.log(Buffer.from(result[0].file_data).toString())
-    res.render("imageView", { name: result[0].file_data });
-  })
-});
+
+
 app.post("/store", (req, res) => {
   const { image, fileName } = req.body;
   const query = "Insert Into file(file_name, file_data, created_by, created_on) Values(?,?,?,CURRENT_TIMESTAMP)";
@@ -38,9 +29,9 @@ app.use(express.json());
 db.connect((err) => {
   if (err) throw err;
 })
-
 app.use("/",require("./routes/pages"))
+
+
 app.use("/api", require("./routes/apiRoutes"))
 
 app.listen(PORT)
-

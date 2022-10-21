@@ -36,18 +36,17 @@ fetch("/api/getAllData", {
 
       // to get each single elephant object from the array and use them to build out html string, we need to open up our array, and we do that using forEach method. The forEach method, finds each item(object) in the array and returns them, this means we get 4 items that are objects back.
       const interator = data.success;
+
+
       interator.forEach(function (data) {
-        // uncomment the line below, to see each of the 4 objects rendered in the console.
-        //console.log(singleElephantObjects);
-
-        // we take our previous empty htmlCode variable and add our html codes to it.
-
-        // because the forEach method returns objects, we can then use the dot notation to reference children of the object, e.g, elephant.title;
+       
+        
+        
         htmlCode =
           htmlCode +
           `
     <div class="card" style="width: 18rem;">
-  <img src="${data.file_data}" class="card-img-top" alt="...">
+  <img src="${ name }" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
