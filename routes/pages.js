@@ -3,27 +3,19 @@ const loggedIn = require("../controllers/loggedin")
 const router = express.Router();
 const db = require("./db-config");
 const logout = require("../controllers/logout")
+var multer  = require('multer');
+var imageModel= require('../controllers/image-model');
+
+
 
 router.get("/", loggedIn, (req, res) => {
   if (req.user) {
-    const query = "Select file_data From file where id=1";
-    db.query(query, (err, result) => {
-      if (err) {
-        console.log(err);
-      }
-      // console.log(Buffer.from(result[0].file_data).toString())
-      res.render("index", { status: "loggedIn", user: req.user,name: result[0].file_data })
-    })
-    
-  } else {
-    const query = "Select file_data From file where id=1";
-    db.query(query, (err, result) => {
-      if (err) {
-        console.log(err);
-      }
-      // console.log(Buffer.from(result[0].file_data).toString())    
-      res.render("index", { status: "no", user: "nothing",name: result[0].file_data })
-    })
+      res.render("index", { status: "loggedIn", user: req.user })
+    } 
+    else {
+      imageModel.displayImage(function(data){
+        res.render("index", { status: "no", user: "nothing", imagePath:data })
+      })
 
   }
 })

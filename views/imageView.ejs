@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <img src="<%= name %>" />
+    
+    <%
+    if(imagePath.length!=0){
+    imagePath.forEach(function(data){
+    %>
+    <img src="<%=data.file_data; %>" width="200px">
+    
+    <%  }) %>
+    <% } else{ %>
+       
+            <p>No Image in the Database</p>
+        
+    <% } %>
 </body>
 </html>

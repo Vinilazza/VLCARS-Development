@@ -4,6 +4,8 @@ form.addEventListener("submit", () => {
     modelo: document.getElementById('modeloCarro').value,
     cor: document.getElementById('corCarro').value,
     ano: document.getElementById('anoCarro').value,
+    preco: document.getElementById('preco').value,
+    descricao: document.getElementById('descricao').value,
     categoria: document.getElementById('mySelect').value,
   }
   fetch("/api/insert-model", {
@@ -86,7 +88,7 @@ inputFile.onchange = function (e) {
   reader.onload = function () {
     fetch("/store", {
       method: "POST",
-      body: JSON.stringify({ image: reader.result, fileName }),
+      body: JSON.stringify({ image: reader.result, fileName,nome: document.getElementById('nomeCarro').value }),
       headers: {
         "Content-Type": "application/json",
       },

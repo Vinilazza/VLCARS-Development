@@ -114,9 +114,27 @@
     </div>
     <script src="js/index.js"></script>
     <div id="txe"></div>
-    <img src="<%= name %>" />
     <div class="test">
-      <div id="vini2"></div>
+
+      <%
+      if(imagePath.length!=0){
+      imagePath.forEach(function(data){
+      %>
+      <div class="card" style="width: 18rem;">
+        <img src="<%=data.file_data; %>" width="200px">
+        <div class="card-body">
+          <h5 class="card-title"><%=data.nome%></h5>
+          <p class="card-text"><%=data.nome%></p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      
+      <%  }) %>
+      <% } else{ %>
+         
+              <p>No Image in the Database</p>
+          
+      <% } %>
 
     </div>
   </main>

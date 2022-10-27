@@ -30,15 +30,16 @@ module.exports = {
   },
 
   async insertModel(req, res) {
-    const { nome, modelo, cor, ano, categoria } = req.body;
-    db.query('INSERT INTO carros SET ?', { nome, modelo, cor, ano, categoria }, async (err, result) => {
+    const { nome, modelo, cor, ano, categoria,descricao, preco } = req.body;
+    db.query('INSERT INTO carros SET ?', { nome, modelo, cor, ano, categoria, descricao, preco }, async (err, result) => {
       if (err) throw err;
       if (result[0]) return res.json({ status: "error", error: "Ocorreu um erro no cadastro do modelo!" })
-    })
+    }) 
     await db.query('SELECT * FROM carros', async (err, result) => {
       if (err) throw err;
       return res.json({ status: "success", success: "O cadastro do modelo de veiculo foi um sucesso!" })
     })
+   
   },
   async insertCategoria(req, res) {
     const { categoria } = req.body;
@@ -109,9 +110,9 @@ module.exports = {
     })
   },
   async getData(req, res) {
-    db.query('Select file_data From file where id = 1',  async (err, result) => {
+    db.query('Select file_data from file ',  async (err, result) => {
       if (err) throw err;
-      return res.json({ status: "success", success: result[0]})
+      return res.json({ status: "success", success: result})
     })
   },
 }
