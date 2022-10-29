@@ -115,5 +115,11 @@ module.exports = {
       return res.json({ status: "success", success: result})
     })
   },
+  async getId(req, res) {
+    db.query('SELECT * FROM carros', async (err, result) => {
+      if (err) throw err;
+      return res.json({ status: "success", success: result})
+    })
+  },
 }
 

@@ -19,6 +19,7 @@ routes.post('/edit', register.edit);
 routes.post('/vendas', register.vendas);
 routes.post('/search', register.search);
 routes.get('/getAllData', register.getData);
+routes.get('/getId', register.getId);
 
 // routes.post('/users', UsersController.testeCreate);
 

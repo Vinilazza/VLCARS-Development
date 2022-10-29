@@ -29,9 +29,9 @@ form.addEventListener("submit", () => {
 })
 
 function redc(e) {
-  window.location= "/search";
+  window.location = "/search";
 }
-document.getElementById("btn-submit").addEventListener("click" , (ev) => {
+document.getElementById("btn-submit").addEventListener("click", (ev) => {
   ev.preventDefault();
   if (filename == "/search") {
   }
@@ -78,17 +78,18 @@ fetch("/api/getCategoria", {
 
 
 
-
 const inputFile = document.getElementById("file");
 inputFile.onchange = function (e) {
   const file = e.target.files[0];
   const fileName = e.target.files[0].name;
   const reader = new FileReader();
+  const ltc = $('#mySelect3 option:last-child').val();
+  const rst = parseInt(ltc)+1;
   reader.readAsDataURL(file);
   reader.onload = function () {
     fetch("/store", {
       method: "POST",
-      body: JSON.stringify({ image: reader.result, fileName,nome: document.getElementById('nomeCarro').value }),
+      body: JSON.stringify({ image: reader.result, fileName, rst }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -149,7 +150,7 @@ fetch("/api/getCar", {
       // add json data to the table as rows.
       for (let i = 0; i < interator.length; i++) {
 
-        tr = table.insertRow(-1); 
+        tr = table.insertRow(-1);
 
 
         for (let j = 0; j < col.length; j++) {
@@ -170,5 +171,30 @@ fetch("/api/getCar", {
 
   )
 
-  
+
+fetch("/api/getId", {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json"
+  }
+}).then(res => res.json())
+  .then(data => {
+    if (data.status == "error") {
+      success.style.display = "none"
+      error.style.display = "block"
+      error.innerText = data.error
+    } else {
+
+      for (const interator of data.success) {
+        var selectElem = document.getElementById("mySelect3");
+        var item = interator.idcarros
+        var element = document.createElement("option");
+        element.innerText = item;
+        selectElem.append(element);
+      }
+
+
+    }
+  })
+
 
