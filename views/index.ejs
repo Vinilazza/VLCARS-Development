@@ -16,6 +16,11 @@
       <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
   <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="/css/index.scss">
+
   
 
 </head>
@@ -115,19 +120,38 @@
     <script src="js/index.js"></script>
     <div id="txe"></div>
     <div class="test">
-
+<div class="shell">
+          <div class="container">
+            <div class="row">
+              
+         
       <%
       if(imagePath.length!=0){
       imagePath.forEach(function(data){
       %>
-      <div class="card" style="width: 18rem;">
-        <img src="<%=data.file_data; %>" width="200px">
-        <div class="card-body">
-          <h5 class="card-title"><%=data.nome%></h5>
-          <p class="card-text"><%=data.nome%></p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="col-md-3">
+        <div class="wsk-cp-product">
+          <div class="wsk-cp-img">
+            <img src="<%=data.file_data; %>" alt="Product" class="img-responsive" />
+          </div>
+          <div class="wsk-cp-text">
+            <div class="category">
+              <span>Ver mais</span>
+            </div>
+            <div class="title-product">
+              <h3><%=data.nome; %></h3>
+            </div>
+            <div class="description-prod">
+              <p><%=data.descricao; %></p>
+            </div>
+            <div class="card-footer">
+              <div class="wcf-left"><span class="price">R$ <%=data.valor; %></span></div>
+              <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+            </div>
+          </div>
         </div>
       </div>
+        
       
       <%  }) %>
       <% } else{ %>
@@ -135,7 +159,9 @@
               <p>No Image in the Database</p>
           
       <% } %>
-
+    </div>
+  </div>
+</div>
     </div>
   </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

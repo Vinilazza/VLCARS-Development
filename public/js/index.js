@@ -18,48 +18,50 @@ document.getElementById("btn-submit").addEventListener("click", (ev) => {
   }
 })
 
+jQuery(document).ready(function($) {
+  
+  //Buy button effects
+  $('.buy').on('click', function() {
+    
+    //It is possible to put the 1st argument of setTimeout as callback of the Materialize.toast function but that approach seems significantly slower. I don't know why yet
+    setTimeout (function() {
+      $("#buy").removeClass("green");
+      $('.buy').fadeOut(100, function() {
+        $(this).text('add_shopping_cart').fadeIn(150);
+      });
+    }, 5000);
+ 
+    
+    $("#buy").addClass("green");
+    $('.buy').fadeOut(100, function() {
+      $(this).text('check').fadeIn(150);
+    });
+    
+    var $toastContent = $('<div class="flow-text">ORDERED! &nbsp <a href="#" class=" amber-text">MY CART</a></div>');
+    Materialize.toast($toastContent, 5000, "rounded");
+    
+   });
+  
+  //Like button effects
+  
+  $('.like').on('click', function() {
+    
+    setTimeout (function() {
+      
+      $('.like').fadeOut(100, function() {
+        $(this).text('favorite_border').fadeIn(150);
+      });
+    }, 5000);
+ 
+    $('.like').fadeOut(100, function() {
+      $(this).text('favorite').fadeIn(150);
+    });
+    
+    var $toastContent2 = $('<div class="flow-text">LIKED!</div>');
+    Materialize.toast($toastContent2, 5000, "pink rounded");
+    
+   });
+});
 
 
-
-const elephantsArray = [
-  {
-    id: 1,
-    title: "Brown elephant with Birds",
-    color: "brown",
-    age: 12,
-    pictureUrl:
-      "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80",
-    imageAlt: "good looking elphant"
-  },
-  {
-    id: 2,
-    title: "Black elephant",
-    color: "black",
-    age: 10,
-    pictureUrl:
-      "https://images.unsplash.com/photo-1503286666306-61c9985f16cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=929&q=80",
-    imageAlt: "dark elephant"
-  },
-  {
-    id: 3,
-    title: "Blue old elephant",
-    color: "blue",
-    age: 19,
-    pictureUrl:
-      "https://images.unsplash.com/photo-1482237935571-d9b52bffe142?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80",
-    imageAlt: "papa elephant"
-  },
-  {
-    id: 4,
-    title: "Green Mamoth Elephant",
-    color: "green",
-    age: 8,
-    pictureUrl:
-      "https://images.unsplash.com/photo-1534692499281-57d0f101789b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
-    imageAlt: "playful elephant"
-  }
-];
-
-// defining our variable to retrieve the html strings
-// we asign an empty template string to htmlCode. We'll add something inside afterwards.
-
+  
