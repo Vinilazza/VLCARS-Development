@@ -15,11 +15,10 @@
       <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" rel="stylesheet">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/index2.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="/css/index.scss">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 
   
@@ -73,51 +72,7 @@
   </nav>
 
   <main>
-    <div id="wrapper">
-      <div class="owl-carousel" id="slider-area">
-        <div style="background-image: url(img/2023-porsche-911-sport-classic-exterior-view-1_edited.jpg)"></div>
-        <div style="background-image: url(img/porsche-911-turbo-s.webp)"></div>
-        <div style="background-image: url(img/2022-porsche-macan-t.jpg)"></div>
-      </div>
-      <div class="slider-text">
-        <h2>VL<span>CARS</span></h2>
-        <p>Há 10 anos disponibilizando as melhores escolhas para voce!</p><a href="#">MODELOS</a> <a class="btn"
-          href="#">Contato</a>
-      </div>
-    </div>
-    <div id="bg">
-      <div class="container">
-        <div class="row">
-          <div class="col-4 ">
-            <h4>Veiculos disponiveis
-            </h4>
-          </div>
-          <div class="col-4 ">
-            <div class="container">
-              <span class="choose me-2">Modelo</span>
-
-              <div class="dropdown">
-                <div class="select">
-                  <span>Escolha seu modelo</span>
-                  <i class="fa fa-chevron-left"></i>
-                </div>
-                <input type="hidden" name="gender">
-                <ul class="dropdown-menu">
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 ">
-            <div class="container">
-              <span class="msg d-none">
-                O modelo escolhido foi <a class="text-decoration-none fw-bold " style="color:coral;"
-                  href="${input2}"></a>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
     <script src="js/index.js"></script>
     <div id="txe"></div>
     <div class="test">
@@ -130,10 +85,10 @@
       if(imagePath.length!=0){
       imagePath.forEach(function(data){
       %>
-      <div class="col-md-3">
+      <div class="col-md-8">
         <div class="wsk-cp-product">
           <div class="wsk-cp-img">
-            <img src="<%=data.file_data; %>" alt="Product" class="img-responsive" height="170px" width="200px" />
+            <img src="<%=data.file_data; %>" alt="Product" class="img-responsive" height="500px" />
           </div>
           <div class="wsk-cp-text">
             <div class="category">
@@ -147,7 +102,7 @@
             </div>
             <div class="card-footer">
               <div class="wcf-left"><span class="price">R$ <%=data.preco;%></span></div>
-              <div class="wcf-right"><a href="/produto" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+              <div class="wcf-right"><a href="/carrinho" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
             </div>
           </div>
         </div>

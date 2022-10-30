@@ -19,6 +19,17 @@ router.get("/", loggedIn, (req, res) => {
 
   }
 })
+router.get("/produto", loggedIn, (req, res) => {
+  if (req.user) {
+      res.render("produto", { status: "loggedIn", user: req.user })
+    } 
+    else {
+      imageModel.displayImage(function(data){
+        res.render("produto", { status: "no", user: "nothing", imagePath:data })
+      })
+
+  }
+})
 router.get("/register", (req, res) => {
   res.sendFile("register.html", { root: "./public" })
 })
@@ -51,6 +62,9 @@ router.get("/edit", (req, res) => {
 })
 router.get("/vendas", (req, res) => {
   res.sendFile("venda.html", { root: "./public/" })
+})
+router.get("/search", (req, res) => {
+  res.sendFile("search.html", { root: "./public/" })
 })
 router.get("/search", (req, res) => {
   res.sendFile("search.html", { root: "./public/" })
