@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="/css/index.scss">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 
   
 
@@ -132,7 +133,7 @@
       <div class="col-md-3">
         <div class="wsk-cp-product">
           <div class="wsk-cp-img">
-            <img src="<%=data.file_data; %>" alt="Product" class="img-responsive" />
+            <img src="<%=data.file_data; %>" alt="Product" class="img-responsive" height="170px" width="200px" />
           </div>
           <div class="wsk-cp-text">
             <div class="category">
@@ -145,8 +146,8 @@
               <p><%=data.descricao; %></p>
             </div>
             <div class="card-footer">
-              <div class="wcf-left"><span class="price">R$ <%=data.valor; %></span></div>
-              <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+              <div class="wcf-left"><span class="price">R$ <%=data.preco;%></span></div>
+              <div class="wcf-right"><a href="/carrinho" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
             </div>
           </div>
         </div>
