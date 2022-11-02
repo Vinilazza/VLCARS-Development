@@ -579,7 +579,7 @@ body{
   -khtml-transform: translate(-50%,-50%);
     
 }
-.wsk-cp-text .category > span{
+.wsk-cp-text .category > a#cd{
   padding: 12px 30px;
   border: 1px solid #313131;
   background:#212121;

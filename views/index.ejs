@@ -130,14 +130,14 @@
       if(imagePath.length!=0){
       imagePath.forEach(function(data){
       %>
-      <div class="col-md-3">
+      <div class="col-md-3" id="<%=data.idcarros%>">
         <div class="wsk-cp-product">
           <div class="wsk-cp-img">
             <img src="<%=data.file_data; %>" alt="Product" class="img-responsive" height="170px" width="200px" />
           </div>
           <div class="wsk-cp-text">
             <div class="category">
-              <span>Ver mais</span>
+              <a href="#" id="cd" class="text-decoration-none">Ver mais</a>
             </div>
             <div class="title-product">
               <h3><%=data.nome; %></h3>
@@ -147,7 +147,7 @@
             </div>
             <div class="card-footer">
               <div class="wcf-left"><span class="price">R$ <%=data.preco;%></span></div>
-              <div class="wcf-right"><a href="/produto" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+              <div class="wcf-right"><a href="/produto/<%=data.idcarros%>" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
             </div>
           </div>
         </div>

@@ -81,6 +81,8 @@
             <div class="row">
               
          
+              <%
+              %>
       <%
       if(imagePath.length!=0){
       imagePath.forEach(function(data){
@@ -88,11 +90,11 @@
       <div class="col-md-8">
         <div class="wsk-cp-product">
           <div class="wsk-cp-img">
-            <img src="<%=data.file_data; %>" alt="Product" class="img-responsive" height="500px" />
+            <img src="<%=data.file_data; %>" alt="Product" class="img-responsive shadow" height="500px" />
           </div>
           <div class="wsk-cp-text">
             <div class="category">
-              <span>Ver mais</span>
+              <span><a href="">Ver mais</a></span>
             </div>
             <div class="title-product">
               <h3><%=data.nome; %></h3>

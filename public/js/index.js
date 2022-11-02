@@ -64,4 +64,4 @@ jQuery(document).ready(function($) {
 });
 
 
-  
+console.log(window.location.pathname.split('/'))
