@@ -531,17 +531,9 @@ body{
   margin:20px auto;
 }
 .wsk-cp-img{
-  position:absolute;
-  top:5px;
-  left:50%;
-  transform:translate(-50%);
-  -webkit-transform:translate(-50%);
-  -ms-transform:translate(-50%);
-  -moz-transform:translate(-50%);
-  -o-transform:translate(-50%);
-  -khtml-transform:translate(-50%);
   width: 100%;
-  padding: 10px;
+  position: relative;
+
   transition: all 0.2s ease-in-out;
 }
 .wsk-cp-img img{
@@ -550,13 +542,12 @@ body{
   border-radius:6px;
 }
 .wsk-cp-product:hover .wsk-cp-img{
-  top:-40px;
 }
 .wsk-cp-product:hover .wsk-cp-img img{
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 .wsk-cp-text{
-  padding-top:40%;
+  width: 100%;
 }
 .wsk-cp-text .category{
   text-align:center;
@@ -579,7 +570,7 @@ body{
   -khtml-transform: translate(-50%,-50%);
     
 }
-.wsk-cp-text .category > span{
+.wsk-cp-text .category > a#cd{
   padding: 12px 30px;
   border: 1px solid #313131;
   background:#212121;
@@ -712,4 +703,11 @@ a.buy-btn{
   background: #FF9800;
   color: #fff;
 }
+}
+
+.col-5 {
+  float:left;
+}
+.col-7 {
+  float: left;
 }

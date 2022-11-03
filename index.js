@@ -12,6 +12,8 @@ app.set("views", "./views");
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true }));
 
+
+
 app.post("/store", (req, res) => {
   const { image, fileName,rst } = req.body;
   const query = "Insert Into file(file_name, file_data, created_by, created_on,idcarro) Values(?,?,?,CURRENT_TIMESTAMP,?)";

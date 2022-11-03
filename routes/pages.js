@@ -19,17 +19,29 @@ router.get("/", loggedIn, (req, res) => {
 
   }
 })
-router.get("/produto", loggedIn, (req, res) => {
+router.get("/produto/:id", loggedIn, (req, res) => {
+  const { id }=req.params;
+  const query = "select file_data,nome,descricao,preco,modelo,cor from file,carros where idcarro=25 and idcarros=25";
   if (req.user) {
-      res.render("produto", { status: "loggedIn", user: req.user })
-    } 
+    db.query(query, [id], (err, result) => {
+      if (err) {
+        console.log(err);
+      }
+      // console.log(Buffer.from(result[0].file_data).toString())
+      res.render("produto", { status: "loggedIn", user: req.user,name: result });
+    })
+  }
     else {
-      imageModel.displayImage(function(data){
-        res.render("produto", { status: "no", user: "nothing", imagePath:data })
+      db.query(query, [id], (err, result) => {
+        if (err) {
+          console.log(err);
+        }
+        // console.log(Buffer.from(result[0].file_data).toString())
+        res.render("produto", { status: "no", user: "nothing",name: result });
       })
-
   }
 })
+
 router.get("/register", (req, res) => {
   res.sendFile("register.html", { root: "./public" })
 })
