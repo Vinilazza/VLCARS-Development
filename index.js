@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.post("/store", (req, res) => {
   const { image, fileName,rst } = req.body;
   const query = "Insert Into file(file_name, file_data, created_by, created_on,idcarro) Values(?,?,?,CURRENT_TIMESTAMP,?)";
-  db.query(query, [fileName, image, 'Program', rst], (err, result) => {
+  db.query(query, [fileName, image , 'Program', rst], (err, result) => {
     if (err) {
       console.log(err);
       res.status(500).send({ msg:'SERVER_ERROR' });

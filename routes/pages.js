@@ -20,19 +20,20 @@ router.get("/", loggedIn, (req, res) => {
   }
 })
 router.get("/produto/:id", loggedIn, (req, res) => {
-  const { id }=req.params;
-  const query = "select file_data,nome,descricao,preco,modelo,cor from file,carros where idcarro=25 and idcarros=25";
+  const {id} =req.query;
+  console.log(req.params[id])
+  const query = "select file_data,nome,descricao,preco,modelo,cor from file,carros where idcarro=? and idcarros=?";
   if (req.user) {
     db.query(query, [id], (err, result) => {
       if (err) {
         console.log(err);
       }
-      // console.log(Buffer.from(result[0].file_data).toString())
+      // console.log(Buffer.from(result[0].file_data).toString()
       res.render("produto", { status: "loggedIn", user: req.user,name: result });
     })
   }
     else {
-      db.query(query, [id], (err, result) => {
+      db.query(query, [id,], (err, result) => {
         if (err) {
           console.log(err);
         }
