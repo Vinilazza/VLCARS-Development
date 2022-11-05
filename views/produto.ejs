@@ -69,96 +69,61 @@
   </nav>
 
   <main>
+    
+
     <div id="txe"></div>
-    <div class="test">
-<div class="shell">
-          <div class="container">
-            <div class="row">
-              
+
          
               <%
               %>
     <%
     
-      if(name.length!=0){
+      if(name.length > 0){
       name.forEach(function(data){
       %>
+      <div id="wrapper">
+        <div class="owl-carousel" id="slider-area">
+          <div style="background-image: url( <%=data.file_data%> )"></div>
+        </div>
+        <div class="slider-text">
+          <h2><%=data.nome%> <span><%=data.modelo%></span></h2>
+          <p><%=data.descricao%></p>
+          <a href="#section" class="btn">Ver mais informações</a>
+          <a href="/carrinho">Adicionar ao carrinho</a> 
+        </div>
+      </div>
+      <div class="section" id="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <img src="<%=data.file_data%>" class="w-100" alt="">
+            </div>
+            <div class="col-4 d-block my-5">
+              <h4>Informações detalhadas:</h4>
+              <p><b>Nome:</b> <%=data.nome%> <%=data.modelo%></p>
+              <p><b>Cores disponiveis:</b> <%=data.cor%></p>
+              <p><b>Preço:</b> <%=data.preco%></p>
+              <p><b>Ano:</b> <%=data.ano%></p>
+              <p><b>Categoria:</b> <%=data.categoria%></p>
+              <p><b>Descrição:</b> <%=data.descricao%></p>
+            </div>
+            <div class="col-4">
+              <a href="/carrinho">Adicionar ao carrinho</a> 
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <main class="container">
- 
-      <!-- Left Column / Headphones Image -->
-      <div class="left-column">
-        <img data-image="black" src="<%=data.file_data %>" alt="">
-        <img data-image="blue" src="<%=data.file_data %>" alt="">
-        <img data-image="red" class="active" src="<%=data.file_data %>" alt="">
-      </div>
-     
-     
-      <!-- Right Column -->
-      <div class="right-column">
-     
-        <!-- Product Description -->
-        <div class="product-description">
-          <span>Headphones</span>
-          <h1>Beats EP</h1>
-          <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>
-        </div>
-     
-        <!-- Product Configuration -->
-        <div class="product-configuration">
-     
-          <!-- Product Color -->
-          <div class="product-color">
-            <span>Color</span>
-     
-            <div class="color-choose">
-              <div>
-                <input data-image="red" type="radio" id="red" name="color" value="red" checked>
-                <label for="red"><span></span></label>
-              </div>
-              <div>
-                <input data-image="blue" type="radio" id="blue" name="color" value="blue">
-                <label for="blue"><span></span></label>
-              </div>
-              <div>
-                <input data-image="black" type="radio" id="black" name="color" value="black">
-                <label for="black"><span></span></label>
-              </div>
-            </div>
-     
-          </div>
-     
-          <!-- Cable Configuration -->
-          <div class="cable-config">
-            <span>Cable configuration</span>
-     
-            <div class="cable-choose">
-              <button>Straight</button>
-              <button>Coiled</button>
-              <button>Long-coiled</button>
-            </div>
-     
-            <a href="#">How to configurate your headphones</a>
-          </div>
-        </div>
-     
-        <!-- Product Pricing -->
-        <div class="product-price">
-          <span>148$</span>
-          <a href="#" class="cart-btn">Add to cart</a>
-        </div>
-      </div>
-    </main>
+      
+      
 
     <%  }) %>
     <% } else{ %>
-
+      <!-- <%=data.file_data %> -->
     <p>No Image in the Database</p>
 
     <% } %>
-    </div>
-    </div>
-    </div>
+
     </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

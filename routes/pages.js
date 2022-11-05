@@ -20,11 +20,12 @@ router.get("/", loggedIn, (req, res) => {
   }
 })
 router.get("/produto/:id", loggedIn, (req, res) => {
-  const {id} =req.query;
-  console.log(req.params[id])
-  const query = "select file_data,nome,descricao,preco,modelo,cor from file,carros where idcarro=? and idcarros=?";
+  const id =req.params.id;
+  const vini = parseInt(id)
+  const query = "select file_data,nome,descricao,ano,cor,categoria,preco,modelo,cor from file,carros where idcarro=? and idcarros=?";
+
   if (req.user) {
-    db.query(query, [id], (err, result) => {
+    db.query(query, [vini,vini], (err, result) => {
       if (err) {
         console.log(err);
       }
@@ -33,7 +34,7 @@ router.get("/produto/:id", loggedIn, (req, res) => {
     })
   }
     else {
-      db.query(query, [id,], (err, result) => {
+      db.query(query, [vini,vini], (err, result) => {
         if (err) {
           console.log(err);
         }
