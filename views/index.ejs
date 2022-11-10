@@ -73,6 +73,28 @@
   </nav>
 
   <main>
+
+      <div class="cart-modal-overlay">
+          <div class="cart-modal">
+            <i id="close-btn" class="fas fa-times"></i>
+              <h1 class="cart-is-empty">Cart is empty</h1>
+            
+              <div class="product-rows">
+              </div>
+              <div class="total">
+                <h1 class="cart-total">TOTAL</h1>
+                  <span class="total-price">$0</span>
+                    <button class="purchase-btn">PURCHASE</button>
+              </div>
+            </div>
+      </div>
+
+      <!--   end of cart modal -->
+  <div class="cart-btn">
+      <i id="cart" class="fas fa-shopping-cart"></i>
+        <span class ="cart-quantity">0</span>
+    </div>
+
     <div id="wrapper">
       <div class="owl-carousel" id="slider-area">
         <div style="background-image: url(img/2023-porsche-911-sport-classic-exterior-view-1_edited.jpg)"></div>
@@ -118,7 +140,7 @@
         </div>
       </div>
     </div>
-    <script src="js/index.js"></script>
+
     <div id="txe"></div>
     <div class="test">
 <div class="shell">
@@ -131,9 +153,9 @@
       imagePath.forEach(function(data){
       %>
       <div class="col-md-3" id="<%=data.idcarros%>">
-        <div class="wsk-cp-product">
+        <div class="wsk-cp-product card">
           <div class="wsk-cp-img">
-            <img src="<%=data.file_data; %>" alt="Product" class="img-responsive" height="170px" width="200px" />
+            <img  class="product-image" src="<%=data.file_data; %>" alt="Product" height="170px" width="200px" />
           </div>
           <div class="wsk-cp-text">
             <div class="category">
@@ -146,8 +168,8 @@
               <p><%=data.descricao; %></p>
             </div>
             <div class="card-footer">
-              <div class="wcf-left"><span class="price">R$ <%=data.preco;%></span></div>
-              <div class="wcf-right"><a href="/produto/<%=data.idcarros%>" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+              <div class="wcf-left"><span class="product-price"><%=data.preco;%></span></div>
+              <div class="wcf-right"><button class="add-to-cart"><i class="zmdi zmdi-shopping-basket"></i></button></div>
             </div>
           </div>
         </div>
@@ -163,6 +185,7 @@
     </div>
   </div>
 </div>
+<script src="js/index.js"></script>
     </div>
   </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
