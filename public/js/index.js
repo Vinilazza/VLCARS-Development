@@ -58,10 +58,9 @@ for (var i = 0; i < addToCart.length; i++) {
 
 function addToCartClicked (event) {
   button = event.target;
-  var cartItem = button.parentElement;
-  var price = cartItem.getElementsByClassName('product-price').innerText;
-  
-  var imageSrc = cartItem.getElementsByClassName('product-image').src;
+  var cartItem = button.parentElement;   
+  var price = cartItem.getElementsByClassName('product-price')[0].innerText;
+  var imageSrc = cartItem.getElementsByClassName('product-image')[0].src;
   addItemToCart (price, imageSrc);
   updateCartPrice()
 }

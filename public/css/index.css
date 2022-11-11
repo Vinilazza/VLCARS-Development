@@ -579,7 +579,11 @@ body{
   -khtml-transform: translate(-50%,-50%);
     
 }
-.wsk-cp-text .category > a#cd{
+.hrv:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#cd{
   padding: 12px 30px;
   border: 1px solid #313131;
   background:#212121;
@@ -714,6 +718,9 @@ a.buy-btn{
 }
 }
 
+.text {
+  font-family: 'Montserrat', sans-serif;
+} 
 
 * {
   margin: 0;
@@ -774,9 +781,8 @@ img {
 
 
 .product-price {
-  padding-top: 1em;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 18px;
 }
 
 .cart-modal-overlay {
