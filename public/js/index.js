@@ -61,11 +61,13 @@ function addToCartClicked (event) {
   var cartItem = button.parentElement;   
   var price = cartItem.getElementsByClassName('product-price')[0].innerText;
   var imageSrc = cartItem.getElementsByClassName('product-image')[0].src;
-  addItemToCart (price, imageSrc);
+  var name = cartItem.getElementsByClassName('product-name')[0].innerText;
+  var id = cartItem.getElementsByClassName('idget')[0].innerText;
+  addItemToCart (price, imageSrc,id,name);
   updateCartPrice()
 }
 
-function addItemToCart (price, imageSrc) {
+function addItemToCart (price, imageSrc,id,name) {
   var productRow = document.createElement('div');
   productRow.classList.add('product-row');
   var productRows = document.getElementsByClassName('product-rows')[0];
@@ -81,7 +83,9 @@ function addItemToCart (price, imageSrc) {
   var cartRowItems = `
   <div class="product-row">
         <img class="cart-image" src="${imageSrc}" alt="">
-        <span class ="cart-price">${price}</span>
+        <span class="cart-name" style="color: white;margin-right: 15px">${name}</span>
+        <span class="cart-price">${price}</span>
+        <span style="display:none" class="idfromcart" id="${id}">${id}</span>
         <input class="product-quantity" type="number" value="1">
         <button class="remove-btn">Remove</button>
         </div>
@@ -151,11 +155,99 @@ const closeCartModal = document.querySelector('.cart-modal');
 purchaseBtn.addEventListener('click', purchaseBtnClicked)
 
 function purchaseBtnClicked () {
-  alert ('Thank you for your purchase');
-  cartModalOverlay.style.transform= 'translateX(-100%)'
- var cartItems = document.getElementsByClassName('product-rows')[0]
- while (cartItems.hasChildNodes()) {
-   cartItems.removeChild(cartItems.firstChild)
+
+  if (confirm("Finalizar compra?")==true) {
+
+    
+    const c = document.querySelectorAll('.idfromcart');
+    console.log()
+    for (const v of c) {
+      const ic = document.querySelectorAll('.idfromcart').length
+      console.log(ic)
+        if (c.length > 1) {
+          let cont= 0;
+          var idc = [document.querySelectorAll('.idfromcart')[0].id, document.querySelectorAll('.idfromcart')[cont+1].id];
+
+          let d = new Date()
+          var mySqlTimestamp = new Date(
+            d.getFullYear(),
+            d.getMonth(),
+            d.getDate(),
+            d.getHours(),
+            (d.getMinutes() + 30), // add 30 minutes
+            d.getSeconds(),
+            d.getMilliseconds()
+          ).toISOString().slice(0, 19).replace('T', ' ')
+
+          
+        }
+        else {
+               let idc= document.querySelectorAll('.idfromcart')[0].id
+       console.log(idc)
+        }
+  
+        
+        
+      }
+    
+      const dados = {
+        iditens: [idc],
+        data: mySqlTimestamp
+      }
+      console.log(dados.id)
+      fetch("/api/cart", {
+        method: "POST",
+        body: JSON.stringify(dados),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json())
+        .then(data => {
+          if (data.status == "error") {
+            success.style.display = "none"
+            error.style.display = "block"
+            error.innerText = data.error
+          } else {
+            console.log("funcionou")
+          }
+        })
+
+        const dados2 = {
+          data: mySqlTimestamp
+        }
+        console.log(dados.id)
+        fetch("/api/cartcompra", {
+          method: "POST",
+          body: JSON.stringify(dados2),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }).then(res => res.json())
+          .then(data => {
+            if (data.status == "error") {
+              success.style.display = "none"
+              error.style.display = "block"
+              error.innerText = data.error
+            } else {
+              console.log("funcionou")
+              window.location.href = "/payment"
+            }
+          })
+
+    
+    
+
+
+
+
+//     // window.location.href = "/payment"
+//     cartModalOverlay.style.transform= 'translateX(-100%)'
+//  var cartItems = document.getElementsByClassName('product-rows')[0]
+//  while (cartItems.hasChildNodes()) {
+//    cartItems.removeChild(cartItems.firstChild)
+//   }
+  
+  
    
  }
   updateCartPrice()

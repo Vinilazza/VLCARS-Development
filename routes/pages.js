@@ -43,7 +43,14 @@ router.get("/produto/:id", loggedIn, (req, res) => {
       })
   }
 })
-
+router.get("/payment", loggedIn, (req, res) => {
+  if (req.user) {
+      res.render("payment", { status: "loggedIn", user: req.user })
+    } 
+    else {
+        res.render("payment", { status: "no", user: "nothing" })
+  }
+})
 router.get("/register", (req, res) => {
   res.sendFile("register.html", { root: "./public" })
 })

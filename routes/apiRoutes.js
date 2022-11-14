@@ -20,7 +20,8 @@ routes.post('/vendas', register.vendas);
 routes.post('/search', register.search);
 routes.get('/getAllData', register.getData);
 routes.get('/getId', register.getId);
-
+routes.post('/cart', register.cart);
+routes.post('/cartcompra', register.cartcompra);
 // routes.post('/users', UsersController.testeCreate);
 
 module.exports = routes;
