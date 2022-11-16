@@ -124,14 +124,14 @@
     <div class="cart-modal-overlay">
       <div class="cart-modal">
         <i id="close-btn" class="fas fa-times"></i>
-          <h1 class="cart-is-empty">Cart is empty</h1>
+          <h1 class="cart-is-empty">Carrinho está vaziu!</h1>
         
           <div class="product-rows">
           </div>
           <div class="total">
             <h1 class="cart-total">TOTAL</h1>
               <span class="total-price">$0</span>
-                <button class="purchase-btn">PURCHASE</button>
+                <button class="purchase-btn">COMPRAR</button>
           </div>
         </div>
   </div>
@@ -161,8 +161,8 @@
         <h3 class="text product-name"><%=data.nome; %></h3>
         <p class="fw-bold" style="font-weight: 18px;">R$ <span class="product-price"><%=data.preco; %></span> </p>
         <p><%=data.descricao; %></p>
-        
-        <button class="add-to-cart" id="cd">Add to Cart</button>
+        <a class="text-decoration-none" href="/produto/<%=data.idcarros%>"><button class="btn btn-transparent border p-2 mb-3">Ver mais</button></a>
+        <button class="add-to-cart" id="cd">Adicione no carrinho</button>
         <span class="idget" style="display: none;"><%=data.idcarros%></span>
         <p></p>
       </div>
