@@ -158,7 +158,6 @@ function purchaseBtnClicked () {
 
   if (confirm("Finalizar compra?")==true) {
 
-    
     const c = document.querySelectorAll('.idfromcart');
     console.log()
     for (const v of c) {
@@ -183,6 +182,8 @@ function purchaseBtnClicked () {
         }
         else {
                let idc= document.querySelectorAll('.idfromcart')[0].id
+
+               
        console.log(idc)
         }
   
