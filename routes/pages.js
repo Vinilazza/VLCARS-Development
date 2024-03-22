@@ -53,6 +53,13 @@ router.get("/payment", loggedIn, (req, res) => {
         res.render("payment", { status: "no", user: "nothing" })
   }
 })
+router.get("/admin", loggedIn, (req,res) => {
+  if(req.user) {
+    res.render("admin", { status: "loggedIn", user: req.user})
+  }
+    res.render("admin", { status: "no", user: 'nothing'})
+})
+
 router.get("/register", (req, res) => {
   res.sendFile("register.html", { root: "./public" })
 })
@@ -62,9 +69,7 @@ router.get("/login", (req, res) => {
 router.get("/dbconfig", (req, res) => {
   res.sendFile("db-config.js", { root: "./routes/" })
 })
-router.get("/admin", (req, res) => {
-  res.sendFile("admin.html", { root: "./public/" })
-})
+
 router.get("/calendar", (req, res) => {
   res.sendFile("calendar.html", { root: "./public/" })
 })

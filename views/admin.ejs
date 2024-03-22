@@ -6,6 +6,10 @@
 </head>
 
 <body>
+
+	<%if (status=="loggedIn" ) {%>
+
+		
 	<header>
 		<nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-dark">
 			<div class="position-sticky">
@@ -215,7 +219,12 @@
 
 
 
-
+    <%}	
+    else {%>
+      <a href="/login" id="navbar">
+        <span>Porfavor se identifique!</span>
+      </a>
+      <%}%>
 	</main>
 	<!--Main layout-->
 
