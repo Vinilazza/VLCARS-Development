@@ -10,7 +10,9 @@ var imageModel= require('../controllers/image-model');
 
 router.get("/", loggedIn, (req, res) => {
   if (req.user) {
-      res.render("index", { status: "loggedIn", user: req.user })
+    imageModel.displayImage(function(data){
+      res.render("index", { status: "loggedIn", imagePath:data })
+    })
     } 
     else {
       imageModel.displayImage(function(data){
