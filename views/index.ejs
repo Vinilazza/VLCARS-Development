@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,17 +11,18 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous">
     </script>
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" rel="stylesheet">
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
   <link rel="stylesheet" href="/css/index.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="/css/index.scss">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/css/index.scss">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 
-  
+
 
 </head>
 
@@ -50,14 +50,14 @@
       <span class="fas fa-times"></span>
     </div>
     <form action="#" class="me-3">
-      <input type="search" class="search-data"  placeholder="Search" required>
+      <input type="search" class="search-data" placeholder="Search" required>
       <button type="submit" class="fas fa-search" id="btn-submit" onclick="redc()"></button>
     </form>
-    
+
     <%if (status=="loggedIn" ) {%>
       <div class="dropdowne">
-        <img src="/img/prof.jpeg" class="rounded-circle dropbtn w-100"
-          onclick="dropdownFunc()" height="29px" alt="" loading="lazy" />
+        <img src="/img/prof.jpeg" class="rounded-circle dropbtn w-100" onclick="dropdownFunc()" height="29px" alt=""
+          loading="lazy" />
         <div id="myDropdowne" class="dropdowne-content">
           <a href="/admin">Profile</a>
           <a href="/logout">Logout</a>
@@ -74,7 +74,7 @@
 
   <main>
 
-      
+
     <div id="wrapper">
       <div class="owl-carousel" id="slider-area">
         <div style="background-image: url(img/2023-porsche-911-sport-classic-exterior-view-1_edited.jpg)"></div>
@@ -124,103 +124,110 @@
     <div class="cart-modal-overlay">
       <div class="cart-modal">
         <i id="close-btn" class="fas fa-times"></i>
-          <h1 class="cart-is-empty">Carrinho está vaziu!</h1>
-        
-          <div class="product-rows">
-          </div>
-          <div class="total">
-            <h1 class="cart-total">TOTAL</h1>
-              <span class="total-price">$0</span>
-                <button class="purchase-btn">COMPRAR</button>
-          </div>
-        </div>
-  </div>
+        <h1 class="cart-is-empty">Carrinho está vaziu!</h1>
 
-  <!--   end of cart modal -->
-<div class="cart-btn">
-  <i id="cart" class="fas fa-shopping-cart"></i>
-    <span class ="cart-quantity">0</span>
-</div>
+        <div class="product-rows">
+        </div>
+        <div class="total">
+          <h1 class="cart-total">TOTAL</h1>
+          <span class="total-price">$0</span>
+          <button class="purchase-btn">COMPRAR</button>
+        </div>
+      </div>
+    </div>
+
+    <!--   end of cart modal -->
+    <div class="cart-btn">
+      <i id="cart" class="fas fa-shopping-cart"></i>
+      <span class="cart-quantity">0</span>
+    </div>
 
     <div id="txe"></div>
     <div class="test">
-<div class="shell">
-          <div class="container">
-            <div class="row">
-              
-         
-      <%
-      if(imagePath.length!=0){
-      imagePath.forEach(function(data){
-      %>
+      <div class="shell">
+        <div class="container">
+          <div class="row">
 
 
-      <div class="col-md-3" id="<%=data.idcarros%>">
-      <div class="wsk-cp-product card hrv">
-        <img class="product-image rounded w-100 shadow" src="<%=data.file_data; %>" alt="Denim Jeans" height="170px" width="200px">
-        <h3 class="text product-name"><%=data.nome; %></h3>
-        <p class="fw-bold" style="font-weight: 18px;">R$ <span class="product-price"><%=data.preco; %></span> </p>
-        <p><%=data.descricao; %></p>
-        <a class="text-decoration-none" href="/produto/<%=data.idcarros%>"><button class="btn btn-transparent border p-2 mb-3">Ver mais</button></a>
-        <button class="add-to-cart" id="cd">Adicione no carrinho</button>
-        <span class="idget" style="display: none;"><%=data.idcarros%></span>
-        <p></p>
+            <% if(imagePath.length!=0){ imagePath.forEach(function(data){ %>
+
+
+              <div class="col-md-3" id="<%=data.idcarros%>">
+                <div class="wsk-cp-product card hrv">
+                  <img class="product-image rounded w-100 shadow" src="<%=data.file_data; %>" alt="Denim Jeans"
+                    height="170px" width="200px">
+                  <h3 class="text product-name">
+                    <%=data.nome; %>
+                  </h3>
+                  <p class="fw-bold" style="font-weight: 18px;">R$ <span class="product-price">
+                      <%=data.preco; %>
+                    </span> </p>
+                  <p>
+                    <%=data.descricao; %>
+                  </p>
+                  <a class="text-decoration-none" href="/produto/<%=data.idcarros%>"><button
+                      class="btn btn-transparent border p-2 mb-3">Ver mais</button></a>
+                  <button class="add-to-cart" id="cd">Adicione no carrinho</button>
+                  <span class="idget" style="display: none;">
+                    <%=data.idcarros%>
+                  </span>
+                  <p></p>
+                </div>
+              </div>
+
+
+              <% }) %>
+                <% } else{ %>
+
+                  <p>No Image in the Database</p>
+
+                  <% } %>
+          </div>
+        </div>
       </div>
-    </div>
-      
-      
-      <%  }) %>
-      <% } else{ %>
-         
-              <p>No Image in the Database</p>
-          
-      <% } %>
-    </div>
-  </div>
-</div>
-<script src="js/index.js"></script>
+      <script src="js/index.js"></script>
     </div>
   </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    
-    <script>
-      /* When the user clicks on the button,
- toggle between hiding and showing the dropdown content */
-      function dropdownFunc() {
-        document.getElementById("myDropdowne").classList.toggle("show");
-      }
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-      // Close the dropdown menu if the user clicks outside of it
-      window.onclick = function (event) {
-        if (!event.target.matches('.dropbtn')) {
-          var dropdowns = document.getElementsByClassName("dropdowne-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-              openDropdown.classList.remove('show');
-            }
+  <script>
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+    function dropdownFunc() {
+      document.getElementById("myDropdowne").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdowne-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
           }
         }
       }
+    }
 
-      $('#slider-area').owlCarousel({
-        loop: true,
-        autoplay: true,
-        responsive: {
-          0: {
-            items: 1
-          },
-          600: {
-            items: 1
-          },
-          1000: {
-            items: 1
-          }
+    $('#slider-area').owlCarousel({
+      loop: true,
+      autoplay: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 1
+        },
+        1000: {
+          items: 1
         }
-      })        
-    </script>
+      }
+    })        
+  </script>
 </body>
 
 </html>

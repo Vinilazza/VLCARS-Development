@@ -57,7 +57,10 @@ router.get("/admin", loggedIn, (req,res) => {
   if(req.user) {
     res.render("admin", { status: "loggedIn", user: req.user})
   }
-    res.render("admin", { status: "no", user: 'nothing'})
+  else {
+        res.render("adminlogin", { status: "no", user: 'nothing'})
+  }
+
 })
 
 router.get("/register", (req, res) => {
